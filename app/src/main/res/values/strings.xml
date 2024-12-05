@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">EduLife Planner</string>
+
+    <!--    Home Page-->
+    <string name="home_welcome_message">Welcome back, User!</string>
+    <string name="glance_panel_label">At a Glance</string>
+    <string name="glance_panel_subtitle">Today\'s Breakdown</string>
+    <string name="glance_panel_text_1">
+        • Classes Attended: 2\n• Study Sessions: 0\n• Assignments Due: 2\n• Next Class: HCDD 340 @ 4:35pm
+    </string>
+    <string name="glance_panel_text_2">
+        • You\'ve hit 8/10 goals for the week.\n• You\'ve missed 2 classes in the past week.\n• You\'ve been studying 50% more compared to this time last week.\n• You\'ve reported feeling happy a record 26 times this month!
+    </string>
+    <string name="glance_panel_text_3">
+        \"The only thing we have to fear is fear itself.\" - Franklin D. Roosevelt
+    </string>
+    <string name="glance_panel_num">1/3</string>
+    <string name="week_panel_label">This Week</string>
+    <string name="week_panel_mon_label">Mon</string>
+    <string name="week_panel_tue_label">Tue</string>
+    <string name="week_panel_wed_label">Wed</string>
+    <string name="week_panel_thur_label">Thur</string>
+    <string name="week_panel_fri_label">Fri</string>
+    <string name="week_panel_sat_label">Sat</string>
+    <string name="week_panel_sun_label">Sun</string>
+    <string name="beyond_panel_label">Beyond</string>
+    <string name="beyond_panel_current_month"><u>Rest of December</u></string>
+    <string name="beyond_panel_list">
+        <ul><li>Soccer Game Trip (12/12 @ 12:10pm) at Subaru Park Stadium</li></ul>
+        \n<ul><li>Custom Study Day (12/15 @ All Day) at Home &amp; Library</li></ul>
+        \n<ul><li>Finals Week (12/16 - 12/20) at PSU</li></ul>
+        \n<ul><li>Grad Party (12/31 @ 7:00pm) at Santander Arena</li></ul>
+    </string>
+
+    <!--    Main Menu-->
+    <string name="profile_label">Profile</string>
+    <string name="login_label">Login</string>
+    <string name="sign_up_label">Sign Up</string>
+
+    <!--    Bottom Navigation Bar-->
+    <string name="home_label">Home</string>
+    <string name="schedule_label">Schedule</string>
+    <string name="goals_label">Goals</string>
+    <string name="study_label">Study</string>
+
+    <!-- Sign Up-->
+    <string name="signup_title">Sign Up</string>
+    <string name="first_name_label">First Name:</string>
+    <string name="last_name_label">Last Name:</string>
+    <string name="email_label">Email:</string>
+    <string name="password_label">Password:</string>
+    <string name="major_label">Major:</string>
+    <string name="hint_first_name">Enter your first name</string>
+    <string name="hint_last_name">Enter your last name</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="major_prompt">Select your major</string>
+    <string name="major_engineering">Engineering</string>
+    <string name="major_business">Business</string>
+    <string name="major_arts">Arts</string>
+    <string name="major_science">Science</string>
+    <string name="major_education">Education</string>
+    <string name="major_other">Other</string>
+</resources>

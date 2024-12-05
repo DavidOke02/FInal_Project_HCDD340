@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="major_array">
+        <item>@string/major_prompt</item>
+        <item>@string/major_engineering</item>
+        <item>@string/major_business</item>
+        <item>@string/major_arts</item>
+        <item>@string/major_science</item>
+        <item>@string/major_education</item>
+        <item>@string/major_other</item>
+    </string-array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navbar_home_item"
+        android:icon="@drawable/baseline_circle_24"
+        android:title="@string/home_label" />
+
+    <item
+        android:id="@+id/navbar_schedule_item"
+        android:icon="@drawable/baseline_circle_24"
+        android:title="@string/schedule_label" />
+
+    <item
+        android:id="@+id/navbar_goals_item"
+        android:icon="@drawable/baseline_circle_24"
+        android:title="@string/goals_label" />
+
+    <item
+        android:id="@+id/navbar_study_item"
+        android:icon="@drawable/baseline_circle_24"
+        android:title="@string/study_label" />
+</menu>
