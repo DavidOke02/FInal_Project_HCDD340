@@ -1,8 +1,10 @@
 package edu.psu.ist.hcdd340.finalproject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -22,10 +24,30 @@ public class EventsActivity extends AppCompatActivity implements NavigationBarVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
+        //Setting up Event Page elements
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navbar_schedule_item);
         bottomNavigationView.setOnItemSelectedListener(this);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.event_menu, menu);
+        return true;
+    }
+
+    //Add Menu
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int menuId = item.getItemId();
+
+        if (menuId == R.id.add_to_calendar_item) {
+            Log.d(TAG, "Add to Schedule menu clicked!");
+            //Intent addEventIntent = new Intent(this, addEventActivity.class);
+            //startActivity(addEventIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //Navigation Bar Stuff
