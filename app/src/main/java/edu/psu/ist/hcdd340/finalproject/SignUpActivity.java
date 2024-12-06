@@ -17,6 +17,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText etFirstName, etLastName, etEmail, etPassword;
     private Spinner spinnerMajor;
     private Button btnSignUp;
+    private static final String TAG = "ACTIVITY_LOGIN";
     public static final String SHARED_PREF_NAME = "USER_INFO";
     public static final String FIRST_NAME_KEY =  "FIRST_NAME";
     public static final String LAST_NAME_KEY = "LAST_NAME";
@@ -36,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         spinnerMajor = findViewById(R.id.spinner_major);
-        btnSignUp = findViewById(R.id.btn_signup);
+        btnSignUp = findViewById(R.id.btn_login);
 
         // Set up Spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -74,7 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
             editor.putBoolean(LOGGED_IN_KEY, false);
             editor.apply();
 
-            Snackbar.make(btnSignUp, "Sign Up Successful", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(btnSignUp, "Sign Up Successful!", Snackbar.LENGTH_SHORT).show();
         }
     }
 }

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private GlanceCardData[] cardData;
     private BottomNavigationView bottomNavigationView;
     private SharedPreferences sharedPreferences;
+    private boolean isLoggedIn;
     private static final String TAG = "ACTIVITY_MAIN";
 
     @Override
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Setting up home page basics
+        isLoggedIn = false;
+        invalidateOptionsMenu();
         recyclerView = findViewById(R.id.glance_panel);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navbar_home_item);
@@ -38,12 +43,14 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
         //Display username if logged in
         sharedPreferences = getSharedPreferences(SignUpActivity.SHARED_PREF_NAME, MODE_PRIVATE);
+        TextView welcomeMessage = findViewById(R.id.welcome_text);
         if (sharedPreferences.getBoolean(SignUpActivity.LOGGED_IN_KEY, false) == true){
-            //
-
+            String userName = sharedPreferences.getString(SignUpActivity.FIRST_NAME_KEY, null);
+            welcomeMessage.setText(String.format("Welcome back, %s!", userName));
+            isLoggedIn = true;
         }
 
-        // Sample data for the cards
+        // Sample data for the At a Glance cards
         cardData = new GlanceCardData[]{
                 new GlanceCardData("Today's Breakdown", getString(R.string.glance_panel_text_1)),
                 new GlanceCardData("Recent Insights", getString(R.string.glance_panel_text_2)),
@@ -68,9 +75,31 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         snapHelper.attachToRecyclerView(recyclerView);
     }
 
+    //Makes sure page refreshes after login
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        //Checks login state to determine menu options
+        if (isLoggedIn == true){
+            MenuItem item1 = menu.findItem(R.id.login_item);
+            MenuItem item2 = menu.findItem(R.id.sign_up_item);
+            item1.setVisible(false);
+            item2.setVisible(false);
+        }
+
+        else {
+            MenuItem item1 = menu.findItem(R.id.view_profile_item);
+            MenuItem item2 = menu.findItem(R.id.sign_out_item);
+            item1.setVisible(false);
+            item2.setVisible(false);
+        }
         return true;
     }
 
@@ -90,6 +119,19 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             return true;
         } else if (menuId == R.id.profile_item) {
             Log.d(TAG, "Profile menu clicked!");
+            return true;
+        } else if (menuId == R.id.view_profile_item) {
+            Log.d(TAG, "View Profile menu clicked!");
+            //Intent viewProfileIntent = new Intent(this, ProfileActivity.class);
+            //startActivity(viewProfileIntent)
+            return true;
+        } else if (menuId == R.id.sign_out_item) {
+            Log.d(TAG, "Sign Out menu clicked!");
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(SignUpActivity.LOGGED_IN_KEY, false);
+            editor.apply();
+            invalidateOptionsMenu();
+            recreate();
             return true;
         }
         return super.onOptionsItemSelected(item);

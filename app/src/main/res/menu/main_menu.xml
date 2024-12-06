@@ -14,6 +14,12 @@
             <item
                 android:id="@+id/sign_up_item"
                 android:title="@string/sign_up_label" />
+            <item
+                android:id="@+id/view_profile_item"
+                android:title="@string/view_profile_label" />
+            <item
+                android:id="@+id/sign_out_item"
+                android:title="@string/sign_out_label" />
         </menu>
     </item>
 </menu>
