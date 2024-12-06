@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         spinnerMajor = findViewById(R.id.spinner_major);
-        btnSignUp = findViewById(R.id.btn_login);
+        btnSignUp = findViewById(R.id.btn_sign_up);
 
         // Set up Spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         TextView welcomeMessage = findViewById(R.id.welcome_text);
         if (sharedPreferences.getBoolean(SignUpActivity.LOGGED_IN_KEY, false) == true){
             String userName = sharedPreferences.getString(SignUpActivity.FIRST_NAME_KEY, null);
-            welcomeMessage.setText(String.format("Welcome back, %s!", userName));
+            welcomeMessage.setText(String.format("%s %s!", getString(R.string.home_welcome_message), userName));
             isLoggedIn = true;
+        } else {
+            welcomeMessage.setText(String.format("%s User!", getString(R.string.home_welcome_message)));
         }
 
         // Sample data for the At a Glance cards
@@ -122,8 +124,8 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             return true;
         } else if (menuId == R.id.view_profile_item) {
             Log.d(TAG, "View Profile menu clicked!");
-            //Intent viewProfileIntent = new Intent(this, ProfileActivity.class);
-            //startActivity(viewProfileIntent)
+            Intent viewProfileIntent = new Intent(this, ProfileActivity.class);
+            startActivity(viewProfileIntent);
             return true;
         } else if (menuId == R.id.sign_out_item) {
             Log.d(TAG, "Sign Out menu clicked!");

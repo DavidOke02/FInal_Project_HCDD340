@@ -2,7 +2,7 @@
     <string name="app_name">EduLife Planner</string>
 
     <!--    Home Page-->
-    <string name="home_welcome_message">Welcome back, User!</string>
+    <string name="home_welcome_message">Welcome back,</string>
     <string name="glance_panel_label">At a Glance</string>
     <string name="glance_panel_subtitle">Today\'s Breakdown</string>
     <string name="glance_panel_text_1">
@@ -78,4 +78,25 @@
     <string name="event_summary">You have no events scheduled. Add some to get started!</string>
     <string name="event_hub">Event Hub</string>
     <string name="select_today">Today</string>
+
+    <!-- Profile -->
+    <string name="profile_id_title">EduLife ID</string>
+    <string name="profile_extra_info">Extra Information</string>
+    <string name="profile_id_name">Name:</string>
+    <string name="profile_id_email">Email:</string>
+    <string name="profile_id_major">Major:</string>
+    <string name="profile_id_institution_place">Institution:</string>
+    <string name="profile_id_institution_type">Currently In:</string>
+    <string name="profile_id_expected_grad_date">Expected Grad:</string>
+    <string name="profile_id_account_creation_date">Account Made: </string>
+    <string name="profile_id_account_update_date">Last Updated:</string>
+    <string name="profile_institution_place_label">What institution are you studying at?</string>
+    <string name="profile_institution_type_label">What level of education are you currently pursuing?</string>
+    <string name="profile_expected_grad_date_label">What year are you anticipating to complete this level of education?</string>
+    <string name="profile_institution_place_hint">Enter institution name (i.e. Penn State) </string>
+    <string name="profile_institution_type_hint">Enter education level (i.e. College)</string>
+    <string name="profile_expected_grad_date_hint">Enter anticipated completion date (i.e. 2025)</string>
+    <string name="profile_update_button">Update Info</string>
+    <string name="profile_clear_button">Clear Info</string>
+
 </resources>
