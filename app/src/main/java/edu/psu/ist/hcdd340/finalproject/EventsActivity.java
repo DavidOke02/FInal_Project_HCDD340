@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CalendarView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class EventsActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
 
+    private CalendarView calendarView;
     private BottomNavigationView bottomNavigationView;
     private static final String TAG = "ACTIVITY_EVENT";
 
@@ -28,6 +31,22 @@ public class EventsActivity extends AppCompatActivity implements NavigationBarVi
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navbar_schedule_item);
         bottomNavigationView.setOnItemSelectedListener(this);
+
+        // Find the views
+        calendarView = findViewById(R.id.calendarView);
+        Button todayButton = findViewById(R.id.todayButton);
+
+        // Set the calendar to display today's date when the activity starts
+        calendarView.setDate(System.currentTimeMillis(), false, true);
+
+        // Set up the "Select Today" button
+        todayButton.setOnClickListener(v -> {
+            // Get the current time in milliseconds
+            long today = System.currentTimeMillis();
+
+            // Update the CalendarView to display today's date
+            calendarView.setDate(today, true, true);
+        });
 
     }
 

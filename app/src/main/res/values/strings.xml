@@ -78,6 +78,8 @@
     <string name="event_summary">You have no events scheduled. Add some to get started!</string>
     <string name="event_hub">Event Hub</string>
     <string name="select_today">Today</string>
+    <string name="todays_events">Today\'s Events</string>
+    <string name="no_events">You have no events today.</string>
 
     <!-- Profile -->
     <string name="profile_id_title">EduLife ID</string>
