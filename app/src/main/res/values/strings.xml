@@ -99,4 +99,24 @@
     <string name="profile_update_button">Update Info</string>
     <string name="profile_clear_button">Clear Info</string>
 
+    <!--    Study Page-->
+    <string name="study_title_message">Study and Resources</string>
+    <string name="mood_panel_label">Mood Check-In</string>
+    <string name="mood_panel_subtitle">How are you feeling today?</string>
+    <string name="mood_panel_amazing_label">Amazing!</string>
+    <string name="mood_panel_good_label">Good</string>
+    <string name="mood_panel_alright_label">Alright</string>
+    <string name="mood_panel_not_good_label">Not too good</string>
+    <string name="mood_panel_awful_label">Awful!</string>
+    <string name="study_session_label">Study Sessions</string>
+    <string name="study_session_info_1">Study Sessions Today: N/A</string>
+    <string name="study_session_info_2">Study Notes Today: N/A</string>
+    <string name="study_session_info_3">Current Day-Streak: N/A</string>
+    <string name="study_session_view_notes_label">Review Study Session Notes</string>
+    <string name="study_session_start_session_label">Start a Study Session</string>
+    <string name="resource_panel_label">Helpful Resources</string>
+    <string name="resource_panel_study_plans_label">Study Plans</string>
+    <string name="resource_panel_helpful_sites_label">Helpful Sites</string>
+    <string name="resource_panel_wellness_guides_label">Wellness Guides</string>
+
 </resources>
