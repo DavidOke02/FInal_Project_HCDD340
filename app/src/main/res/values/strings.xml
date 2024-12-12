@@ -81,6 +81,15 @@
     <string name="todays_events">Today\'s Events</string>
     <string name="no_events">You have no events today.</string>
 
+    <!-- Add Events -->
+    <string name="add_event_title">Add Event</string>
+    <string name="task_name_hint">Task Name</string>
+    <string name="select_date">Due Date</string>
+    <string name="select_time">Time Due</string>
+    <string name="task_description_hint">Task Description</string>
+    <string name="save_event">Save</string>
+    <string name="cancel">Cancel</string>
+
     <!-- Profile -->
     <string name="profile_id_title">EduLife ID</string>
     <string name="profile_extra_info">Extra Information</string>
