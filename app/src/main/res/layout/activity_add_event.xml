@@ -22,91 +22,93 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Input field for Task Name -->
+
+    <!-- Input field for Date -->
     <EditText
         android:id="@+id/et_task_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:hint="@string/task_name_hint"
         android:inputType="text"
-        android:textSize="22sp"
         android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_add_event_title"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="32dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_add_event_title" />
 
-    <!-- Input field for Date -->
     <EditText
         android:id="@+id/et_select_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:hint="@string/select_date"
         android:inputType="date"
-        android:textSize="22sp"
         android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/et_task_name"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_task_name" />
 
     <!-- Input field for Time -->
     <EditText
         android:id="@+id/et_select_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:hint="@string/select_time"
         android:inputType="time"
-        android:textSize="22sp"
         android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/et_select_date"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_select_date" />
 
     <!-- Input field for Task Description -->
     <EditText
         android:id="@+id/et_task_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:hint="@string/task_description_hint"
         android:inputType="textMultiLine"
         android:minHeight="200dp"
-        android:textSize="22sp"
         android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/et_select_time"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_select_time" />
 
     <!-- Save Button -->
     <Button
         android:id="@+id/btn_save_event"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/save_event"
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="40dp"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/et_task_description"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/save_event"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="40dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_task_description" />
 
     <!-- Cancel Button -->
     <Button
         android:id="@+id/btn_cancel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        android:textSize="22sp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/background_dark"
-        android:textColor="@android:color/white"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/btn_save_event"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/cancel"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="20dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
