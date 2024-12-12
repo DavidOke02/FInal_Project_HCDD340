@@ -62,8 +62,8 @@ public class EventsActivity extends AppCompatActivity implements NavigationBarVi
 
         if (menuId == R.id.add_to_calendar_item) {
             Log.d(TAG, "Add to Schedule menu clicked!");
-            //Intent addEventIntent = new Intent(this, addEventActivity.class);
-            //startActivity(addEventIntent);
+            Intent addEventIntent = new Intent(this, AddEventActivity.class);
+            startActivity(addEventIntent);
             return true;
         }
         return super.onOptionsItemSelected(item);
