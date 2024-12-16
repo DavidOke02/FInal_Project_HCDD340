@@ -6,48 +6,84 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.CalendarView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import java.util.ArrayList;
+import java.util.Set;
 
-public class EventsActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
+public class EventsActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
 
     private CalendarView calendarView;
     private BottomNavigationView bottomNavigationView;
     private static final String TAG = "ACTIVITY_EVENT";
 
+    private LinearLayout eventsLayout;
+    private ArrayList<String> eventsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        //Setting up Event Page elements
+        // Setting up Event Page elements
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.navbar_schedule_item);
         bottomNavigationView.setOnItemSelectedListener(this);
 
         // Find the views
         calendarView = findViewById(R.id.calendarView);
-        Button todayButton = findViewById(R.id.todayButton);
+        eventsLayout = findViewById(R.id.eventLayout); // The LinearLayout that will hold the event list
 
         // Set the calendar to display today's date when the activity starts
         calendarView.setDate(System.currentTimeMillis(), false, true);
 
-        // Set up the "Select Today" button
-        todayButton.setOnClickListener(v -> {
-            // Get the current time in milliseconds
-            long today = System.currentTimeMillis();
+        // Initialize the list of events
+        eventsList = new ArrayList<>();
 
-            // Update the CalendarView to display today's date
-            calendarView.setDate(today, true, true);
+        // Retrieve saved events from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("EventPrefs", MODE_PRIVATE);
+        Set<String> eventSet = sharedPreferences.getStringSet("events", null);
+        if (eventSet != null) {
+            eventsList.addAll(eventSet);  // Add saved events to the list
+        }
+
+        // Display the saved events (only task names)
+        displayEvents();
+
+        // Set a listener for date changes on the CalendarView
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+            // Log the selected date (you can add other actions here)
+            Log.d(TAG, "Selected date: " + dayOfMonth + "/" + (month + 1) + "/" + year);
         });
+    }
 
+    // Method to display events in the LinearLayout
+    private void displayEvents() {
+        eventsLayout.removeView(findViewById(R.id.eventDescription)); // Clear existing description view
+
+        // If there are no events, show "No events today"
+        if (eventsList.isEmpty()) {
+            TextView noEventsText = new TextView(this);
+            noEventsText.setText("No events today");
+            noEventsText.setPadding(16, 8, 16, 8);
+            eventsLayout.addView(noEventsText);
+        } else {
+            // Otherwise, display the list of task names
+            for (String event : eventsList) {
+                TextView eventText = new TextView(this);
+                eventText.setText(event);  // Only show the task name
+                eventText.setTextSize(16);
+                eventText.setPadding(16, 8, 16, 8);
+                eventsLayout.addView(eventText);
+            }
+        }
     }
 
     @Override
@@ -56,7 +92,7 @@ public class EventsActivity extends AppCompatActivity implements NavigationBarVi
         return true;
     }
 
-    //Add Menu
+    // Add Menu
     public boolean onOptionsItemSelected(MenuItem item) {
         int menuId = item.getItemId();
 
@@ -69,7 +105,12 @@ public class EventsActivity extends AppCompatActivity implements NavigationBarVi
         return super.onOptionsItemSelected(item);
     }
 
-    //Navigation Bar Stuff
+    @Override
+    public void onClick (View view){
+        calendarView.setDate(System.currentTimeMillis(), true, true);
+    }
+
+    // Navigation Bar Stuff
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();

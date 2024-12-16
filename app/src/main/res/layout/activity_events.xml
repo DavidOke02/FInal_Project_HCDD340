@@ -50,6 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/eventLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -58,33 +59,33 @@
                 android:id="@+id/eventHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="@string/todays_events"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="8dp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/eventDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="8dp"
                 android:text="@string/no_events"
-                android:textSize="16sp"
-                android:textColor="@android:color/darker_gray"
-                android:padding="8dp" />
+                android:textColor="#535353"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/todayButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/purple_500"
                 android:text="@string/select_today"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
-                android:backgroundTint="@color/purple_500"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </LinearLayout>
     </ScrollView>
 

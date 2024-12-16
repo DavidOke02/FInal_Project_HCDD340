@@ -103,7 +103,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -137,7 +137,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -171,7 +171,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -205,7 +205,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -239,7 +239,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -273,7 +273,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 
@@ -307,7 +307,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:paddingTop="8dp"
-                                    android:text="2 Assignments\n3 Classes\n1 Event"
+                                    android:text="@string/week_panel_text"
                                     android:textSize="12sp" />
                             </LinearLayout>
 

@@ -23,6 +23,7 @@
     <string name="week_panel_fri_label">Fri</string>
     <string name="week_panel_sat_label">Sat</string>
     <string name="week_panel_sun_label">Sun</string>
+    <string name="week_panel_text">2 Assignments\n3 Classes\n1 Event</string>
     <string name="beyond_panel_label">Beyond</string>
     <string name="beyond_panel_current_month"><u>Rest of December</u></string>
     <string name="beyond_panel_list">
